@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creds Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="creds-manager.css">
+</head>
+<body>
+
+<header>
+  <h1>Creds Manager</h1>
+  <p>PostgREST · Basic Credential Store</p>
+</header>
+
+<!-- Input Form -->
+<div class="card">
+  <div class="card-title">New Entry</div>
+  <div class="field-group">
+    <div class="field">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" placeholder="e.g. Maria">
+    </div>
+    <div class="field">
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" placeholder="e.g. Santos">
+    </div>
+    <div class="field">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="e.g. maria@example.com">
+    </div>
+  </div>
+  <div class="btn-row">
+    <button class="btn-add" onclick="addCreds()">+ Add Creds</button>
+    <button class="btn-remove" onclick="removeCredsByInput()">✕ Remove by Email</button>
+  </div>
+</div>
+
+<!-- Display List -->
+<div class="card list-card">
+  <div class="card-title">Stored Credentials</div>
+  <div id="creds-list">
+    <div class="empty-state">No credentials loaded yet.</div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script src="creds-manager.js"></script>
+</body>
+</html>
